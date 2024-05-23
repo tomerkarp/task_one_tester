@@ -14,7 +14,7 @@ class TestMainProgram(unittest.TestCase):
         with patch('builtins.input', side_effect=inputs):
             with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
                 try:
-                    with open(self.f_n) as f:
+                    with open(self.f_n, encoding='utf-8') as f:
                         code = f.read()
                         exec(code, globals())
                 except SystemExit:
