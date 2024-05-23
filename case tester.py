@@ -1,20 +1,20 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
-
+import os
 
 class TestMainProgram(unittest.TestCase):
     # =============================================================================================================
     # TODO: Set the file name here to match your main Python file (Task_1, 'main.py')
     file_name = 'Task_one.py'  # TODO:<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
     # =============================================================================================================
     # =============================================================================================================
+    f_n = os.path.join(os.path.dirname(__file__), file_name)
     def run_code_with_input(self, inputs):
         with patch('builtins.input', side_effect=inputs):
             with patch('sys.stdout', new_callable=StringIO) as mock_stdout:
                 try:
-                    with open(self.file_name) as f:
+                    with open(self.f_n) as f:
                         code = f.read()
                         exec(code, globals())
                 except SystemExit:
