@@ -30,4 +30,4 @@ file_name = '______' #your finale file name
 
 היו 5 נסיונות לא תקינים הטעות הייתה
 
-"Invalid Date." במקום "Invalid date."
+"Invalid date." במקום "Invalid Date."
