@@ -64,15 +64,15 @@ class TestMainProgram(unittest.TestCase):
         self.assertIn("Illegal triangle", output)
 
     # Test cases for Exercise 4
-    def test_exercise_4_scalene_right_triangle(self):
+    def test_exercise_4_scalene_right_triangle2(self):
         output = self.run_code_with_input(['4', '3 4 5'])
         self.assertIn("('Scalene', 'Right')", output)
 
-    def test_exercise_4_equilateral_triangle(self):
+    def test_exercise_4_equilateral_triangle2(self):
         output = self.run_code_with_input(['4', '5 5 5'])
         self.assertIn("('Equilateral', 'Acute')", output)
 
-    def test_exercise_4_illegal_triangle(self):
+    def test_exercise_4_illegal_triangle2(self):
         output = self.run_code_with_input(['4', '1 1 3'])
         self.assertIn("Illegal triangle", output)
 
@@ -84,12 +84,20 @@ class TestMainProgram(unittest.TestCase):
         output = self.run_code_with_input(['4', '6 8 10'])
         self.assertIn("('Scalene', 'Right')", output)
 
+    def test_exercise_4_scalene_acute_triangle_flipped(self):
+        output = self.run_code_with_input(['4', '10 8 6'])
+        self.assertIn("('Scalene', 'Right')", output)
+
     def test_exercise_4_isosceles_obtuse_triangle(self):
         output = self.run_code_with_input(['4', '5 5 9'])
         self.assertIn("('Isosceles', 'Obtuse')", output)
 
     def test_exercise_4_scalene_obtuse_triangle(self):
         output = self.run_code_with_input(['4', '7 9 12'])
+        self.assertIn("('Scalene', 'Obtuse')", output)
+
+    def test_exercise_4_scalene_obtuse_triangle_flipped(self):
+        output = self.run_code_with_input(['4', '12 7 9'])
         self.assertIn("('Scalene', 'Obtuse')", output)
 
     def test_exercise_4_large_scalene_triangle(self):
@@ -105,16 +113,16 @@ class TestMainProgram(unittest.TestCase):
         self.assertIn("('Equilateral', 'Acute')", output)
 
     # Test cases for Exercise 3
-    def test_exercise_3_prime_number(self):
+    def test_exercise_3_prime_number2(self):
         output = self.run_code_with_input(['3', '10'])
         self.assertIn("The first prime number greater than 10 is: 11", output)
 
-    def test_exercise_3_next_sorted_number_from_prime(self):
+    def test_exercise_3_next_sorted_number_from_prime2(self):
         output = self.run_code_with_input(['3', '123'])
         self.assertIn("The first prime number greater than 123 is: 127", output)
         self.assertIn("The first number with digits in ascending order as a List is: [1, 2, 8]", output)
 
-    def test_exercise_3_prime_and_sorted(self):
+    def test_exercise_3_prime_and_sorted2(self):
         output = self.run_code_with_input(['3', '20'])
         self.assertIn("The first prime number greater than 20 is: 23", output)
         self.assertIn("The first number with digits in ascending order as a List is: [2, 4]", output)
@@ -155,15 +163,15 @@ class TestMainProgram(unittest.TestCase):
         self.assertIn("The first number with digits in ascending order as a List is: [1, 2, 3, 4]", output)
 
     # Test cases for Exercise 1
-    def test_exercise_1_valid_leap_year(self):
+    def test_exercise_1_valid_leap_year2(self):
         output = self.run_code_with_input(['1', '29', '2', '2020'])
         self.assertIn("The date is valid.", output)
 
-    def test_exercise_1_invalid_non_leap_year(self):
+    def test_exercise_1_invalid_non_leap_year2(self):
         output = self.run_code_with_input(['1', '30', '2', '2021'])
         self.assertIn("Invalid date.", output)
 
-    def test_exercise_1_invalid_date(self):
+    def test_exercise_1_invalid_date2(self):
         output = self.run_code_with_input(['1', '31', '4', '2021'])
         self.assertIn("Invalid date.", output)
 
